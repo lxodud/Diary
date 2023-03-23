@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */; };
 		0C0F6303296405F2004EEAA5 /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F6302296405F2004EEAA5 /* WeatherEntity.swift */; };
 		0C1D52D5296522A300C97E35 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */; };
 		0C1D52DC29659B7100C97E35 /* StubNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52DB29659B7100C97E35 /* StubNetworkManager.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManageViewController.swift; sourceTree = "<group>"; };
 		0C0F6302296405F2004EEAA5 /* WeatherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntity.swift; sourceTree = "<group>"; };
 		0C1D52D2296522A300C97E35 /* DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				C739AE28284DF28600741E8F /* DiaryListViewController.swift */,
 				18ACF3D52951A4F6006906D5 /* DiaryDetailViewController.swift */,
+				0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				18135D1D295C222D00C2269D /* LocalizedConstant.swift in Sources */,
 				C739AE29284DF28600741E8F /* DiaryListViewController.swift in Sources */,
 				18BB1831295ACAE400F84C47 /* UIAlertController+.swift in Sources */,
+				0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */,
 				0C0F6303296405F2004EEAA5 /* WeatherEntity.swift in Sources */,
 				0C1D52E229664E1300C97E35 /* ImageLoader.swift in Sources */,
 				18D381382952F19B002BB2F1 /* UINavigationController+.swift in Sources */,
