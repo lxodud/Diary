@@ -29,7 +29,7 @@ extension DiaryEntity {
     }
 }
 
-extension Weather {
+extension WeatherEntity {
     var weather: WeatherDTO? {
         guard let main = self.main,
               let icon = self.icon else { return nil }
@@ -67,7 +67,7 @@ final class CoreDataManager {
         diaryEntity.createdIntervalValue = Int64(diary.createdDate.timeIntervalSince1970)
         diaryEntity.id = diary.id
         
-        let weatherEntity = Weather(context: context)
+        let weatherEntity = WeatherEntity(context: context)
         weatherEntity.main = weather.main
         weatherEntity.icon = weather.icon
         
