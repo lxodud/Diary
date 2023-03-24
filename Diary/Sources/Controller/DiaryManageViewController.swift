@@ -22,6 +22,38 @@ class DiaryManageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    private func bindKeyboardObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(willShowKeyboard),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(willHideKeyboard),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+}
+
+// MARK: Objc Method
+extension DiaryManageViewController {
+    @objc private func willShowKeyboard(notification: Notification) {
+        if contentTextView.isFirstResponder,
+           let userInfo = notification.userInfo,
+           let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+           contentTextView.textContainerInset.bottom == 0 {
+            contentTextView.contentInset.bottom = keyboardFrame.cgRectValue.height
+        }
+    }
+    
+    @objc private func willHideKeyboard(notification: Notification) {
+        contentTextView.contentInset.bottom = 0
+    }
 }
 
 // MARK: UI Configuration

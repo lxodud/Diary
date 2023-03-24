@@ -23,7 +23,7 @@ final class DiaryDetailViewController: UIViewController {
     private let coreDataManager = CoreDataManager.shared
     private let locationManager = CLLocationManager()
     private var diary: Diary?
-    private var currentWeather: WeatherEntity?
+    private var currentWeather: WeatherDTO?
     private var isNotEmpty: Bool = false {
         didSet {
             navigationItem.rightBarButtonItem?.isEnabled = isNotEmpty
@@ -123,7 +123,7 @@ extension DiaryDetailViewController {
         }
     }
     
-    private func handlingNetworkResult(result: Result<WeatherEntity, NetworkError>) {
+    private func handlingNetworkResult(result: Result<WeatherDTO, NetworkError>) {
         switch result {
         case .success(let weather):
             self.currentWeather = weather
@@ -219,7 +219,7 @@ extension DiaryDetailViewController: CLLocationManagerDelegate {
         
         networkManger.requestData(
             endPoint: endPoint,
-            type: WeatherEntity.self
+            type: WeatherDTO.self
         ) {
             self.handlingNetworkResult(result: $0)
         }

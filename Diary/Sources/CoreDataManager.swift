@@ -30,10 +30,10 @@ extension DiaryEntity {
 }
 
 extension Weather {
-    var weather: WeatherEntity? {
+    var weather: WeatherDTO? {
         guard let main = self.main,
               let icon = self.icon else { return nil }
-        return WeatherEntity(main: main, icon: icon)
+        return WeatherDTO(main: main, icon: icon)
     }
 }
 

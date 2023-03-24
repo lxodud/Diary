@@ -5,7 +5,7 @@
 //  Created by 이태영 on 2023/01/03.
 //
 
-struct WeatherEntity: Hashable {
+struct WeatherDTO: Hashable {
     let main: String
     let icon: String
     
@@ -14,7 +14,7 @@ struct WeatherEntity: Hashable {
     }
 }
 
-extension WeatherEntity: Decodable {
+extension WeatherDTO: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var nestedContainer = try container.nestedUnkeyedContainer(forKey: .weather)
@@ -22,5 +22,11 @@ extension WeatherEntity: Decodable {
         let valuesContainer = try nestedContainer.nestedContainer(keyedBy: CodingKeys.self)
         self.main = try valuesContainer.decode(String.self, forKey: .main)
         self.icon = try valuesContainer.decode(String.self, forKey: .icon)
+    }
+}
+
+extension WeatherDTO {
+    func toDomain() {
+        
     }
 }

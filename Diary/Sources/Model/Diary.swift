@@ -12,14 +12,14 @@ struct Diary: Hashable {
     var title: String
     var body: String
     var createdDate: Date
-    var condition: WeatherEntity?
+    var condition: WeatherDTO?
     
     init(
         id: UUID,
         title: String,
         body: String,
         timeInterval: TimeInterval,
-        condition: WeatherEntity?
+        condition: WeatherDTO?
     ) {
         self.id = id
         self.title = title
