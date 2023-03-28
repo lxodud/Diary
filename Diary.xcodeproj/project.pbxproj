@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */; };
-		0C0D029529CDA37C0009BD75 /* DiaryReository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D029429CDA37C0009BD75 /* DiaryReository.swift */; };
+		0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D029429CDA37C0009BD75 /* DiaryRepository.swift */; };
 		0C0D029B29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */; };
 		0C0F6303296405F2004EEAA5 /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F6302296405F2004EEAA5 /* WeatherDTO.swift */; };
 		0C1C92F729CDB3B000739651 /* WeatherEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */; };
+		0C1C92F929D2C8F100739651 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1C92F829D2C8F100739651 /* Weather.swift */; };
 		0C1D52D5296522A300C97E35 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */; };
 		0C1D52DC29659B7100C97E35 /* StubNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52DB29659B7100C97E35 /* StubNetworkManager.swift */; };
 		0C1D52DE2965A5B000C97E35 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52DD2965A5B000C97E35 /* StubURLSession.swift */; };
@@ -63,10 +64,11 @@
 
 /* Begin PBXFileReference section */
 		0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManageViewController.swift; sourceTree = "<group>"; };
-		0C0D029429CDA37C0009BD75 /* DiaryReository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryReository.swift; sourceTree = "<group>"; };
+		0C0D029429CDA37C0009BD75 /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
 		0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEntity+Mapping.swift"; sourceTree = "<group>"; };
 		0C0F6302296405F2004EEAA5 /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Mapping.swift"; sourceTree = "<group>"; };
+		0C1C92F829D2C8F100739651 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		0C1D52D2296522A300C97E35 /* DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
 		0C1D52DB29659B7100C97E35 /* StubNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNetworkManager.swift; sourceTree = "<group>"; };
@@ -169,7 +171,7 @@
 		0C0D029729CDA5510009BD75 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				0C0D029429CDA37C0009BD75 /* DiaryReository.swift */,
+				0C0D029429CDA37C0009BD75 /* DiaryRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				0CCBFD4E295181A10070FE99 /* Diary.swift */,
+				0C1C92F829D2C8F100739651 /* Weather.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -547,11 +550,12 @@
 				18247549296413EC0030F177 /* Requesting.swift in Sources */,
 				0C1D52E82966FE9F00C97E35 /* UITextView+.swift in Sources */,
 				18135D20295C26BF00C2269D /* Constant.swift in Sources */,
+				0C1C92F929D2C8F100739651 /* Weather.swift in Sources */,
 				18135D1D295C222D00C2269D /* LocalizedConstant.swift in Sources */,
 				C739AE29284DF28600741E8F /* DiaryListViewController.swift in Sources */,
 				18BB1831295ACAE400F84C47 /* UIAlertController+.swift in Sources */,
 				0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */,
-				0C0D029529CDA37C0009BD75 /* DiaryReository.swift in Sources */,
+				0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */,
 				0C0F6303296405F2004EEAA5 /* WeatherDTO.swift in Sources */,
 				0C1D52E229664E1300C97E35 /* ImageLoader.swift in Sources */,
 				18D381382952F19B002BB2F1 /* UINavigationController+.swift in Sources */,

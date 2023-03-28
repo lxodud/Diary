@@ -8,7 +8,7 @@
 import Foundation
 
 extension WeatherEntity {
-func toDTO() -> WeatherDTO? {
+    func toDTO() -> WeatherDTO? {
         guard let main = self.main,
               let icon = self.icon else { return nil }
         return WeatherDTO(main: main, icon: icon)
