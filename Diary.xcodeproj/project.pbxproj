@@ -10,9 +10,10 @@
 		0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */; };
 		0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D029429CDA37C0009BD75 /* DiaryRepository.swift */; };
 		0C0D029B29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */; };
-		0C0F6303296405F2004EEAA5 /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F6302296405F2004EEAA5 /* WeatherDTO.swift */; };
+		0C0F6303296405F2004EEAA5 /* WeatherDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F6302296405F2004EEAA5 /* WeatherDTO+Mapping.swift */; };
 		0C1C92F729CDB3B000739651 /* WeatherEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */; };
 		0C1C92F929D2C8F100739651 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1C92F829D2C8F100739651 /* Weather.swift */; };
+		0C1C92FC29D4390400739651 /* DefaultDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1C92FB29D4390400739651 /* DefaultDiaryRepository.swift */; };
 		0C1D52D5296522A300C97E35 /* WeatherAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */; };
 		0C1D52DC29659B7100C97E35 /* StubNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52DB29659B7100C97E35 /* StubNetworkManager.swift */; };
 		0C1D52DE2965A5B000C97E35 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52DD2965A5B000C97E35 /* StubURLSession.swift */; };
@@ -30,7 +31,7 @@
 		18135D1D295C222D00C2269D /* LocalizedConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18135D1C295C222D00C2269D /* LocalizedConstant.swift */; };
 		18135D20295C26BF00C2269D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18135D1F295C26BF00C2269D /* Constant.swift */; };
 		18135D22295C36B000C2269D /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18135D21295C36B000C2269D /* TimeInterval+.swift */; };
-		18247549296413EC0030F177 /* Requesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18247548296413EC0030F177 /* Requesting.swift */; };
+		18247549296413EC0030F177 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18247548296413EC0030F177 /* Requestable.swift */; };
 		1824754B29642BF70030F177 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824754A29642BF70030F177 /* NetworkManager.swift */; };
 		183193692966C251000100CD /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183193682966C251000100CD /* CacheManager.swift */; };
 		1840511E2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1840511D2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel */; };
@@ -66,9 +67,10 @@
 		0C0D028D29CC641A0009BD75 /* DiaryManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryManageViewController.swift; sourceTree = "<group>"; };
 		0C0D029429CDA37C0009BD75 /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
 		0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEntity+Mapping.swift"; sourceTree = "<group>"; };
-		0C0F6302296405F2004EEAA5 /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
+		0C0F6302296405F2004EEAA5 /* WeatherDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDTO+Mapping.swift"; sourceTree = "<group>"; };
 		0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Mapping.swift"; sourceTree = "<group>"; };
 		0C1C92F829D2C8F100739651 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		0C1C92FB29D4390400739651 /* DefaultDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDiaryRepository.swift; sourceTree = "<group>"; };
 		0C1D52D2296522A300C97E35 /* DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPITests.swift; sourceTree = "<group>"; };
 		0C1D52DB29659B7100C97E35 /* StubNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubNetworkManager.swift; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		18135D1C295C222D00C2269D /* LocalizedConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedConstant.swift; sourceTree = "<group>"; };
 		18135D1F295C26BF00C2269D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		18135D21295C36B000C2269D /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
-		18247548296413EC0030F177 /* Requesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requesting.swift; sourceTree = "<group>"; };
+		18247548296413EC0030F177 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		1824754A29642BF70030F177 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		183193682966C251000100CD /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		1840511C2965B25A000DB981 /* Diary V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Diary V2.xcdatamodel"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		0C0D028F29CDA2D10009BD75 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0C1C92FA29D438E500739651 /* Repositories */,
 				0C0D029C29CDAF230009BD75 /* Network */,
 				0C0D029829CDAA6A0009BD75 /* PersistentStorages */,
 			);
@@ -188,7 +191,7 @@
 		0C0D029C29CDAF230009BD75 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0C0F6302296405F2004EEAA5 /* WeatherDTO.swift */,
+				0C0F6302296405F2004EEAA5 /* WeatherDTO+Mapping.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 				0C1C92F829D2C8F100739651 /* Weather.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0C1C92FA29D438E500739651 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0C1C92FB29D4390400739651 /* DefaultDiaryRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		0C1D52D3296522A300C97E35 /* DiaryTests */ = {
@@ -223,7 +234,7 @@
 		18247547296413DD0030F177 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				18247548296413EC0030F177 /* Requesting.swift */,
+				18247548296413EC0030F177 /* Requestable.swift */,
 				1824754A29642BF70030F177 /* NetworkManager.swift */,
 				0C1D52E32966F45100C97E35 /* NetworkError.swift */,
 				0C1D52E129664E1300C97E35 /* ImageLoader.swift */,
@@ -364,8 +375,8 @@
 		C739AE23284DF28600741E8F /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				0C0D029329CDA2F50009BD75 /* Domain */,
 				0C0D029029CDA2DA0009BD75 /* Presentation */,
+				0C0D029329CDA2F50009BD75 /* Domain */,
 				0C0D028F29CDA2D10009BD75 /* Data */,
 				18ACF3CF2951A435006906D5 /* Sources */,
 				18ACF3CE2951A428006906D5 /* Resources */,
@@ -534,6 +545,7 @@
 			files = (
 				183193692966C251000100CD /* CacheManager.swift in Sources */,
 				0C0D029B29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift in Sources */,
+				0C1C92FC29D4390400739651 /* DefaultDiaryRepository.swift in Sources */,
 				1824754B29642BF70030F177 /* NetworkManager.swift in Sources */,
 				18D381362952E311002BB2F1 /* UIView+.swift in Sources */,
 				0C1C92F729CDB3B000739651 /* WeatherEntity+Mapping.swift in Sources */,
@@ -547,7 +559,7 @@
 				18D381342952E014002BB2F1 /* UIFont+.swift in Sources */,
 				0C396FD8295AB6CF00934C79 /* UIAlertAction+.swift in Sources */,
 				1840511E2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel in Sources */,
-				18247549296413EC0030F177 /* Requesting.swift in Sources */,
+				18247549296413EC0030F177 /* Requestable.swift in Sources */,
 				0C1D52E82966FE9F00C97E35 /* UITextView+.swift in Sources */,
 				18135D20295C26BF00C2269D /* Constant.swift in Sources */,
 				0C1C92F929D2C8F100739651 /* Weather.swift in Sources */,
@@ -556,7 +568,7 @@
 				18BB1831295ACAE400F84C47 /* UIAlertController+.swift in Sources */,
 				0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */,
 				0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */,
-				0C0F6303296405F2004EEAA5 /* WeatherDTO.swift in Sources */,
+				0C0F6303296405F2004EEAA5 /* WeatherDTO+Mapping.swift in Sources */,
 				0C1D52E229664E1300C97E35 /* ImageLoader.swift in Sources */,
 				18D381382952F19B002BB2F1 /* UINavigationController+.swift in Sources */,
 				185A5F382951610800AF523D /* DiaryListCell.swift in Sources */,

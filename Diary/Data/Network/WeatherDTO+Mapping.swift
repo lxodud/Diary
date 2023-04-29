@@ -26,7 +26,7 @@ extension WeatherDTO: Decodable {
 }
 
 extension WeatherDTO {
-    func toDomain() {
-        
+    func toDomain() -> Weather {
+        return Weather(main: self.main, icon: self.icon)
     }
 }

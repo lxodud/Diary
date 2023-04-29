@@ -8,14 +8,14 @@
 import Foundation
 import CoreLocation
 
-protocol Requesting {
+protocol Requestable {
     var baseURL: String { get }
     var method: String { get }
     var path: String { get }
     var query: [URLQueryItem] { get }
 }
 
-extension Requesting {
+extension Requestable {
     static var key: String {
         return "eff332b31ce61b1c3ce23c3c9f2bd3ed"
     }
@@ -32,7 +32,7 @@ extension Requesting {
     }
 }
 
-struct SearchWeatherAPI: Requesting {
+struct SearchWeatherAPI: Requestable {
     let baseURL: String = "https://api.openweathermap.org"
     let method: String = "get"
     let path: String = "/data/2.5/weather"
@@ -49,7 +49,7 @@ struct SearchWeatherAPI: Requesting {
     }
 }
 
-struct ImageLoadAPI: Requesting {
+struct ImageLoadAPI: Requestable {
     var baseURL: String = "http://openweathermap.org"
     var method: String = "get"
     var path: String

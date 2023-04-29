@@ -13,7 +13,7 @@ final class StubNetworkManager: NetworkService {
     var data: Data?
     
     func requestData<T>(
-        endPoint: Requesting,
+        endPoint: Requestable,
         type: T.Type,
         completion: @escaping (T) -> Void
     ) {

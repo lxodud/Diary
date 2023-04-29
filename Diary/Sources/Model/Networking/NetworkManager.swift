@@ -10,7 +10,7 @@ protocol NetworkService { }
 
 protocol APINetworkService: NetworkService {
     func requestData<T: Decodable>(
-        endPoint: Requesting,
+        endPoint: Requestable,
         type: T.Type,
         completion: @escaping (Result<T, NetworkError>) -> Void
     )
@@ -18,7 +18,7 @@ protocol APINetworkService: NetworkService {
 
 extension APINetworkService {
     func requestData<T: Decodable>(
-        endPoint: Requesting,
+        endPoint: Requestable,
         type: T.Type,
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) {

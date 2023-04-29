@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DiaryRepository {
-    
+    func fetchDiary(completion: @escaping (Result<Diary, Error>) -> Void)
 }

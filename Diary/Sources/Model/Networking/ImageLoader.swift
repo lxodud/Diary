@@ -11,7 +11,7 @@ protocol ImageNetworkService: NetworkService {
     var task: URLSessionDataTask? { get set }
     
     func loadImage(
-        endPoint: Requesting,
+        endPoint: Requestable,
         completion: @escaping (UIImage?) -> Void
     )
 }
@@ -24,7 +24,7 @@ class ImageLoader: ImageNetworkService {
     }
     
     func loadImage(
-        endPoint: Requesting,
+        endPoint: Requestable,
         completion: @escaping (UIImage?) -> Void
     ) {
         guard let request = endPoint.convertURL() else { return }
