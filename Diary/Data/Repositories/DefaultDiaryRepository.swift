@@ -7,14 +7,28 @@
 
 import Foundation
 
-final class DefaultDiaryRepository: DiaryRepository {
-    private let coreDataManager: CoreDataManager
+final class DefaultDiaryRepository {
+    private let diaryStorage: DiaryStorage
     
-    init(coreDataManager: CoreDataManager) {
-        self.coreDataManager = coreDataManager
+    init(diaryStorage: DiaryStorage) {
+        self.diaryStorage = diaryStorage
+    }
+}
+
+extension DefaultDiaryRepository: DiaryRepository {
+    func createDiary(with diary: Diary?, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+        diaryStorage.create(with: diary, completion: completion)
     }
     
-    func fetchDiary(completion: @escaping (Result<Diary, Error>) -> Void) {
-        
+    func fetchDiaryList(completion: @escaping (Result<[Diary], CoreDataError>) -> Void) {
+        diaryStorage.fetch(completion: completion)
+    }
+    
+    func updateDiary(with diary: Diary?, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+        diaryStorage.update(with: diary, completion: completion)
+    }
+    
+    func deleteDiary(with id: UUID, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+        diaryStorage.delete(with: id, completion: completion)
     }
 }

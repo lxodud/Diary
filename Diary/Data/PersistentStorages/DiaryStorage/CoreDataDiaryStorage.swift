@@ -28,6 +28,7 @@ extension CoreDataDiaryStorage: DiaryStorage {
                 completion(.failure(.createError))
                 return
             }
+            
             let diaryEntity = DiaryEntity(context: context)
             
             diaryEntity.title = diary.title

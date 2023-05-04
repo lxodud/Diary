@@ -191,8 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0C894A7B2A0397CB00C0E73B /* DiaryStorage */,
-				0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */,
-				0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */,
+				0C894A802A03E1FF00C0E73B /* EntityMapping */,
 				0C894A762A038F7700C0E73B /* CoreDataStorages */,
 			);
 			path = PersistentStorages;
@@ -237,7 +236,6 @@
 			children = (
 				0C894A772A0393F600C0E73B /* CoreDataStorage.swift */,
 				0C894A7E2A039D9E00C0E73B /* CoreDataError.swift */,
-				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
 				1840511D2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel */,
 				C739AE2D284DF28600741E8F /* Diary.xcdatamodeld */,
 			);
@@ -251,6 +249,15 @@
 				0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */,
 			);
 			path = DiaryStorage;
+			sourceTree = "<group>";
+		};
+		0C894A802A03E1FF00C0E73B /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */,
+				0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */,
+			);
+			path = EntityMapping;
 			sourceTree = "<group>";
 		};
 		18135D1E295C26B100C2269D /* Utility */ = {
@@ -299,6 +306,7 @@
 		18ACF3CF2951A435006906D5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
 				183193682966C251000100CD /* CacheManager.swift */,
 				18F2A5362951ABC8008D9CCD /* Extensions */,
 				18ACF3D22951A448006906D5 /* Controller */,
@@ -746,7 +754,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Diary/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -803,7 +811,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Diary/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
