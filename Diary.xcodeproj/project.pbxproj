@@ -25,6 +25,9 @@
 		0C396FD8295AB6CF00934C79 /* UIAlertAction+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */; };
 		0C396FDA295ACE5700934C79 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD9295ACE5700934C79 /* CoreDataManager.swift */; };
 		0C894A782A0393F600C0E73B /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A772A0393F600C0E73B /* CoreDataStorage.swift */; };
+		0C894A7A2A0397B100C0E73B /* DiaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A792A0397B100C0E73B /* DiaryStorage.swift */; };
+		0C894A7D2A039B0D00C0E73B /* CoreDataDiaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */; };
+		0C894A7F2A039D9E00C0E73B /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A7E2A039D9E00C0E73B /* CoreDataError.swift */; };
 		0CCBFD492950645B0070FE99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBFD482950645B0070FE99 /* .swiftlint.yml */; };
 		0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */; };
 		0CCBFD4F295181A10070FE99 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4E295181A10070FE99 /* Diary.swift */; };
@@ -84,6 +87,9 @@
 		0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+.swift"; sourceTree = "<group>"; };
 		0C396FD9295ACE5700934C79 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C894A772A0393F600C0E73B /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		0C894A792A0397B100C0E73B /* DiaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStorage.swift; sourceTree = "<group>"; };
+		0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDiaryStorage.swift; sourceTree = "<group>"; };
+		0C894A7E2A039D9E00C0E73B /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		0CCBFD482950645B0070FE99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContentConfiguration.swift; sourceTree = "<group>"; };
 		0CCBFD4E295181A10070FE99 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 		0C0D029829CDAA6A0009BD75 /* PersistentStorages */ = {
 			isa = PBXGroup;
 			children = (
+				0C894A7B2A0397CB00C0E73B /* DiaryStorage */,
 				0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */,
 				0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */,
 				0C894A762A038F7700C0E73B /* CoreDataStorages */,
@@ -228,12 +235,22 @@
 		0C894A762A038F7700C0E73B /* CoreDataStorages */ = {
 			isa = PBXGroup;
 			children = (
-				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
 				0C894A772A0393F600C0E73B /* CoreDataStorage.swift */,
+				0C894A7E2A039D9E00C0E73B /* CoreDataError.swift */,
+				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
 				1840511D2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel */,
 				C739AE2D284DF28600741E8F /* Diary.xcdatamodeld */,
 			);
 			path = CoreDataStorages;
+			sourceTree = "<group>";
+		};
+		0C894A7B2A0397CB00C0E73B /* DiaryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				0C894A792A0397B100C0E73B /* DiaryStorage.swift */,
+				0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */,
+			);
+			path = DiaryStorage;
 			sourceTree = "<group>";
 		};
 		18135D1E295C26B100C2269D /* Utility */ = {
@@ -443,7 +460,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					0C1D52D1296522A300C97E35 = {
 						CreatedOnToolsVersion = 14.2;
@@ -559,6 +576,7 @@
 				0C1C92FC29D4390400739651 /* DefaultDiaryRepository.swift in Sources */,
 				1824754B29642BF70030F177 /* NetworkManager.swift in Sources */,
 				18D381362952E311002BB2F1 /* UIView+.swift in Sources */,
+				0C894A7A2A0397B100C0E73B /* DiaryStorage.swift in Sources */,
 				0C1C92F729CDB3B000739651 /* WeatherEntity+Mapping.swift in Sources */,
 				18135D22295C36B000C2269D /* TimeInterval+.swift in Sources */,
 				18F2A5382951ABD4008D9CCD /* UINavigationItem+.swift in Sources */,
@@ -582,9 +600,11 @@
 				0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */,
 				0C0F6303296405F2004EEAA5 /* WeatherDTO+Mapping.swift in Sources */,
 				0C1D52E229664E1300C97E35 /* ImageLoader.swift in Sources */,
+				0C894A7F2A039D9E00C0E73B /* CoreDataError.swift in Sources */,
 				18D381382952F19B002BB2F1 /* UINavigationController+.swift in Sources */,
 				185A5F382951610800AF523D /* DiaryListCell.swift in Sources */,
 				C739AE25284DF28600741E8F /* AppDelegate.swift in Sources */,
+				0C894A7D2A039B0D00C0E73B /* CoreDataDiaryStorage.swift in Sources */,
 				0C1D52E62966FE7E00C97E35 /* UITextField+.swift in Sources */,
 				C739AE27284DF28600741E8F /* SceneDelegate.swift in Sources */,
 				18ACF3D62951A4F6006906D5 /* DiaryDetailViewController.swift in Sources */,
@@ -632,6 +652,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KHQ37J8NU9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -655,6 +676,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = KHQ37J8NU9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;

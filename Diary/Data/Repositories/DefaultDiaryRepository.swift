@@ -15,5 +15,6 @@ final class DefaultDiaryRepository: DiaryRepository {
     }
     
     func fetchDiary(completion: @escaping (Result<Diary, Error>) -> Void) {
+        
     }
 }
