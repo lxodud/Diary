@@ -24,6 +24,7 @@
 		0C1D52E82966FE9F00C97E35 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52E72966FE9F00C97E35 /* UITextView+.swift */; };
 		0C396FD8295AB6CF00934C79 /* UIAlertAction+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */; };
 		0C396FDA295ACE5700934C79 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD9295ACE5700934C79 /* CoreDataManager.swift */; };
+		0C894A782A0393F600C0E73B /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A772A0393F600C0E73B /* CoreDataStorage.swift */; };
 		0CCBFD492950645B0070FE99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBFD482950645B0070FE99 /* .swiftlint.yml */; };
 		0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */; };
 		0CCBFD4F295181A10070FE99 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4E295181A10070FE99 /* Diary.swift */; };
@@ -82,6 +83,7 @@
 		0C1D52E72966FE9F00C97E35 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+.swift"; sourceTree = "<group>"; };
 		0C396FD9295ACE5700934C79 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0C894A772A0393F600C0E73B /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		0CCBFD482950645B0070FE99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContentConfiguration.swift; sourceTree = "<group>"; };
 		0CCBFD4E295181A10070FE99 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				0C0D029A29CDAB3F0009BD75 /* DiaryEntity+Mapping.swift */,
 				0C1C92F629CDB3B000739651 /* WeatherEntity+Mapping.swift */,
+				0C894A762A038F7700C0E73B /* CoreDataStorages */,
 			);
 			path = PersistentStorages;
 			sourceTree = "<group>";
@@ -220,6 +223,17 @@
 				0C1D52D4296522A300C97E35 /* WeatherAPITests.swift */,
 			);
 			path = DiaryTests;
+			sourceTree = "<group>";
+		};
+		0C894A762A038F7700C0E73B /* CoreDataStorages */ = {
+			isa = PBXGroup;
+			children = (
+				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
+				0C894A772A0393F600C0E73B /* CoreDataStorage.swift */,
+				1840511D2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel */,
+				C739AE2D284DF28600741E8F /* Diary.xcdatamodeld */,
+			);
+			path = CoreDataStorages;
 			sourceTree = "<group>";
 		};
 		18135D1E295C26B100C2269D /* Utility */ = {
@@ -260,8 +274,6 @@
 				C739AE30284DF28600741E8F /* Assets.xcassets */,
 				C739AE32284DF28600741E8F /* LaunchScreen.storyboard */,
 				C739AE35284DF28600741E8F /* Info.plist */,
-				C739AE2D284DF28600741E8F /* Diary.xcdatamodeld */,
-				1840511D2965B47F000DB981 /* MappingModelV1ToV2.xcmappingmodel */,
 				18135D19295C1DEC00C2269D /* Localizable.strings */,
 			);
 			path = Resources;
@@ -271,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				183193682966C251000100CD /* CacheManager.swift */,
-				0C396FD9295ACE5700934C79 /* CoreDataManager.swift */,
 				18F2A5362951ABC8008D9CCD /* Extensions */,
 				18ACF3D22951A448006906D5 /* Controller */,
 				18ACF3D12951A446006906D5 /* View */,
@@ -555,6 +566,7 @@
 				0C1D52E42966F45100C97E35 /* NetworkError.swift in Sources */,
 				0CCBFD4F295181A10070FE99 /* Diary.swift in Sources */,
 				0C396FDA295ACE5700934C79 /* CoreDataManager.swift in Sources */,
+				0C894A782A0393F600C0E73B /* CoreDataStorage.swift in Sources */,
 				18F2A53C2951DF14008D9CCD /* Date+.swift in Sources */,
 				18D381342952E014002BB2F1 /* UIFont+.swift in Sources */,
 				0C396FD8295AB6CF00934C79 /* UIAlertAction+.swift in Sources */,
