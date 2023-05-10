@@ -25,7 +25,7 @@ final class StubURLSession {
         )
         
         sessionDataTask.completion = {
-            completionHandler(WeatherDTO.mockData, response, nil)
+            completionHandler(WeatherInfoDTO.mockData, response, nil)
         }
         
         return sessionDataTask

@@ -12,7 +12,7 @@ protocol Mockable {
     static var mockData: Data? { get }
 }
 
-extension WeatherDTO: Mockable {
+extension WeatherInfoDTO: Mockable {
     static let mockData: Data? = """
     {
         "coord": {

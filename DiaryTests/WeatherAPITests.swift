@@ -28,9 +28,9 @@ final class WeatherAPITests: XCTestCase {
         let endPoint = SearchWeatherAPI(location: location)
         
         // when
-        sut.requestData(endPoint: endPoint, type: WeatherDTO.self) { _ in }
+        sut.requestData(endPoint: endPoint, type: WeatherInfoDTO.self) { _ in }
         
         // then
-        XCTAssertTrue(sut.data == WeatherDTO.mockData)
+        XCTAssertTrue(sut.data == WeatherInfoDTO.mockData)
     }
 }
