@@ -35,6 +35,7 @@
 		0C8D742C2A0B7E920097A47B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D742B2A0B7E920097A47B /* Location.swift */; };
 		0C8D742F2A0B809E0097A47B /* CLLocationCoordinate2D+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D742E2A0B809E0097A47B /* CLLocationCoordinate2D+Mapping.swift */; };
 		0C8D74312A0B81860097A47B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74302A0B81860097A47B /* LocationService.swift */; };
+		0C8D74332A0B85170097A47B /* DefaultLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74322A0B85170097A47B /* DefaultLocationRepository.swift */; };
 		0CCBFD492950645B0070FE99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBFD482950645B0070FE99 /* .swiftlint.yml */; };
 		0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */; };
 		0CCBFD4F295181A10070FE99 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4E295181A10070FE99 /* Diary.swift */; };
@@ -104,6 +105,7 @@
 		0C8D742B2A0B7E920097A47B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0C8D742E2A0B809E0097A47B /* CLLocationCoordinate2D+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Mapping.swift"; sourceTree = "<group>"; };
 		0C8D74302A0B81860097A47B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0C8D74322A0B85170097A47B /* DefaultLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocationRepository.swift; sourceTree = "<group>"; };
 		0CCBFD482950645B0070FE99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContentConfiguration.swift; sourceTree = "<group>"; };
 		0CCBFD4E295181A10070FE99 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				0C1C92FB29D4390400739651 /* DefaultDiaryRepository.swift */,
+				0C8D74322A0B85170097A47B /* DefaultLocationRepository.swift */,
 				0C8D74262A0B7B7D0097A47B /* DefaultWeahterInfoRepository.swift */,
 			);
 			path = Repositories;
@@ -662,6 +665,7 @@
 				18ACF3D62951A4F6006906D5 /* DiaryDetailViewController.swift in Sources */,
 				C739AE2F284DF28600741E8F /* Diary.xcdatamodeld in Sources */,
 				0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */,
+				0C8D74332A0B85170097A47B /* DefaultLocationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,10 +38,10 @@ struct SearchWeatherAPI: Requestable {
     let path: String = "/data/2.5/weather"
     let query: [URLQueryItem]
     
-    init(location: CLLocationCoordinate2D) {
+    init(location: Location) {
         let coordinatorQuery: [String: String] = [
-            "lat": location.latitude.description,
-            "lon": location.longitude.description,
+            "lat": location.latitude,
+            "lon": location.longitude,
             "appid": Self.key
         ]
         

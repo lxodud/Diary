@@ -8,5 +8,8 @@
 import Foundation
 
 protocol WeatherInfoRepository {
-    func fetchWeatherInfo(completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func fetchWeatherInfo(
+        location: Location,
+        completion: @escaping (Result<WeatherInfo, NetworkError>) -> Void
+    )
 }

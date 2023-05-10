@@ -8,5 +8,8 @@
 import Foundation
 
 protocol WeatherImageRepository {
-    func fetchWeahterImage(completion: @escaping (Result<Data, NetworkError>) -> Void)
+    func fetchWeahterImage(
+        icon: String,
+        completion: @escaping (Result<Data, NetworkError>) -> Void
+    )
 }

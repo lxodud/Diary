@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LocationRepository {
-    func fetchCurrentLocation()
+    func fetchCurrentLocation() -> Location
 }

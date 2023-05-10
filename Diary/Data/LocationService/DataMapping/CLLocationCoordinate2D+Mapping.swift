@@ -11,7 +11,7 @@ extension CLLocationCoordinate2D {
     func toDomain() -> Location {
         return Location(
             latitude: self.latitude.description,
-            longititude: self.longitude.description
+            longitude: self.longitude.description
         )
     }
 }

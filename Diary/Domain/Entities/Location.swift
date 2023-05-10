@@ -7,5 +7,5 @@
 
 struct Location {
     let latitude: String
-    let longititude: String
+    let longitude: String
 }

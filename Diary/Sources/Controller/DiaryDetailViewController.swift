@@ -215,7 +215,7 @@ extension DiaryDetailViewController: CLLocationManagerDelegate {
         guard let location = locations.first?.coordinate else { return }
         
         let networkManger = NetworkManager()
-        let endPoint = SearchWeatherAPI(location: location)
+        let endPoint = SearchWeatherAPI(location: location.toDomain())
         
         networkManger.requestData(
             endPoint: endPoint,
