@@ -12,7 +12,7 @@ protocol ImageNetworkService: NetworkService {
     
     func loadImage(
         endPoint: Requestable,
-        completion: @escaping (UIImage?) -> Void
+        completion: @escaping (Data?) -> Void
     )
 }
 
@@ -25,7 +25,7 @@ class ImageLoader: ImageNetworkService {
     
     func loadImage(
         endPoint: Requestable,
-        completion: @escaping (UIImage?) -> Void
+        completion: @escaping (Data?) -> Void
     ) {
         guard let request = endPoint.convertURL() else { return }
         
@@ -41,13 +41,12 @@ class ImageLoader: ImageNetworkService {
                 return
             }
             
-            guard let data = data,
-                  let image = UIImage(data: data) else {
+            guard let data = data else {
                 completion(nil)
                 return
             }
             
-            completion(image)
+            completion(data)
         }
         
         self.task = task

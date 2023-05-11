@@ -4,14 +4,21 @@
 //
 //  Copyright (c) 2023 Minii All rights reserved.
 
+import Foundation
 
-import UIKit
-
-class CacheManager {
-    static let share = CacheManager()
+final class ImageData {
+    let imageData: Data
     
-    var memoryCache = NSCache<NSString, UIImage>()
-    var diskCache = FileManager.default
+    init(imageData: Data) {
+        self.imageData = imageData
+    }
+}
+
+final class CacheManager {
+    static let shared = CacheManager()
+    
+    private let memoryCache = NSCache<NSString, ImageData>()
+    private let diskCache = FileManager.default
     
     private var folderURL: URL?
     
@@ -19,14 +26,14 @@ class CacheManager {
         createFolder()
     }
     
-    func saveMemory(key: String?, image: UIImage) {
+    func saveMemory(key: String?, data: Data) {
         guard let key = key else { return }
         let objectKey = NSString(string: key)
         
-        memoryCache.setObject(image, forKey: objectKey)
+        memoryCache.setObject(ImageData(imageData: data), forKey: objectKey)
     }
     
-    func readMemory(key: String?) -> UIImage? {
+    func readMemory(key: String?) -> ImageData? {
         guard let key = key else { return nil }
         let objectKey = NSString(string: key)
         
@@ -47,24 +54,24 @@ class CacheManager {
         folderURL = url
     }
     
-    func saveDisk(key: String?, image: UIImage?) {
+    func saveDisk(key: String?, data: Data?) {
         guard let key = key,
-              let folderURL = folderURL,
-              let image = image else { return }
+              let folderURL = folderURL
+        else {
+            return
+        }
         
         let fileURL = folderURL.appendingPathComponent(key)
-        
-        let data = image.pngData()
         try? data?.write(to: fileURL)
     }
     
-    func readDisk(key: String?) -> UIImage? {
+    func readDisk(key: String?) -> Data? {
         guard let key = key,
               let folderURL = folderURL else { return nil }
         
         let fileURL = folderURL.appendingPathComponent(key)
         guard let data = diskCache.contents(atPath: fileURL.path) else { return nil }
         
-        return UIImage(data: data)
+        return data
     }
 }

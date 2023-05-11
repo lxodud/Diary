@@ -22,7 +22,7 @@ final class DiaryListCellContentView: UIView, UIContentView {
     private let dateLabel = UILabel()
     private let bodyLabel = UILabel()
     private let weatherImageView = UIImageView()
-    private let imageCacher = CacheManager.share
+    private let imageCacher = CacheManager.shared
     private var appliedConfiguration: DiaryContentConfiguration?
     
     init(configuration: DiaryContentConfiguration) {
@@ -49,10 +49,14 @@ final class DiaryListCellContentView: UIView, UIContentView {
             return
         }
         
-        ImageLoader().loadImage(endPoint: imageEndpoint) { image in
+        ImageLoader().loadImage(endPoint: imageEndpoint) { data in
             DispatchQueue.main.async {
-                self.weatherImageView.image = image
-                self.imageCacher.saveDisk(key: configuration.iconName, image: image)
+                guard let data = data else {
+                    return
+                }
+                
+                self.weatherImageView.image = UIImage(data: data)
+                self.imageCacher.saveMemory(key: configuration.iconName, data: data)
             }
         }
     }
@@ -61,17 +65,8 @@ final class DiaryListCellContentView: UIView, UIContentView {
 // MARK: Image Load Method
 extension DiaryListCellContentView {
     func loadCacheImage(key: String?) -> Bool {
-        if let image = imageCacher.readMemory(key: key) {
-            weatherImageView.image = image
-            return true
-        }
-        
-        return loadDiskImage(key: key)
-    }
-    
-    func loadDiskImage(key: String?) -> Bool {
-        if let image = imageCacher.readDisk(key: key) {
-            weatherImageView.image = image
+        if let data = imageCacher.readMemory(key: key) {
+            weatherImageView.image = UIImage(data: data.imageData)
             return true
         }
         
