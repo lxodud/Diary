@@ -44,10 +44,11 @@ final class DiaryListCellContentView: UIView, UIContentView {
         dateLabel.text = configuration.dateString
         bodyLabel.text = configuration.bodyString
         
-        guard let imageEndpoint = ImageLoadAPI(icon: configuration.iconName),
-              loadCacheImage(key: configuration.iconName) == false else {
+        guard loadCacheImage(key: configuration.iconName) == false else {
             return
         }
+        
+        let imageEndpoint = ImageLoadAPI(icon: configuration.iconName ?? "")
         
         ImageLoader().loadImage(endPoint: imageEndpoint) { data in
             DispatchQueue.main.async {

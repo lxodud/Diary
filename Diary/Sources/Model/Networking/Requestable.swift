@@ -55,8 +55,7 @@ struct ImageLoadAPI: Requestable {
     var path: String
     var query: [URLQueryItem]
     
-    init?(icon: String?) {
-        guard let icon = icon else { return nil }
+    init(icon: String) {
         self.path = "/img/wn/\(icon)@2x.png"
         self.query = []
     }

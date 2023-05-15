@@ -9,6 +9,7 @@ import Foundation
 
 final class DefaultWeahterInfoRepository {
     private let networkService: APINetworkService
+    private let decoder = JSONDecoder()
     
     init(networkService: APINetworkService) {
         self.networkService = networkService
@@ -23,11 +24,15 @@ extension DefaultWeahterInfoRepository: WeatherInfoRepository {
         let endPoint = SearchWeatherAPI(location: location)
             
         networkService.requestData(
-            endPoint: endPoint,
-            type: WeatherInfoDTO.self) { result in
+            endPoint: endPoint) { result in
                 switch result {
                 case .success(let data):
-                    completion(.success(data.toDomain()))
+                    guard let decodedData = try? self.decoder.decode(WeatherInfoDTO.self, from: data) else {
+                        completion(.failure(.parsingError))
+                        return
+                    }
+                    
+                    completion(.success(decodedData.toDomain()))
                 case .failure(let error):
                     completion(.failure(error))
                 }

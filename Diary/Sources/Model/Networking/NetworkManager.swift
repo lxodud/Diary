@@ -9,18 +9,16 @@ import Foundation
 protocol NetworkService { }
 
 protocol APINetworkService: NetworkService {
-    func requestData<T: Decodable>(
+    func requestData(
         endPoint: Requestable,
-        type: T.Type,
-        completion: @escaping (Result<T, NetworkError>) -> Void
+        completion: @escaping (Result<Data, NetworkError>) -> Void
     )
 }
 
 extension APINetworkService {
-    func requestData<T: Decodable>(
+    func requestData(
         endPoint: Requestable,
-        type: T.Type,
-        completion: @escaping (Result<T, NetworkError>) -> Void
+        completion: @escaping (Result<Data, NetworkError>) -> Void
     ) {
         guard let request = endPoint.convertURL() else {
             completion(.failure(.invalidURL))
@@ -43,13 +41,12 @@ extension APINetworkService {
                 return
             }
             
-            guard let data = data,
-                  let decodeData = try? JSONDecoder().decode(T.self, from: data) else {
-                completion(.failure(.parsingError))
+            guard let data = data else {
+                completion(.failure(.transportError))
                 return
             }
-            
-            completion(.success(decodeData))
+
+            completion(.success(data))
         }
         
         task.resume()

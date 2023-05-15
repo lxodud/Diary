@@ -8,6 +8,6 @@
 import Foundation
 
 protocol WeatherImageStorage {
-    func fetchWeatherImage(key: String?, data: Data)
-    func save(key: String?) -> Data?
+    func fetchWeatherImage(key: String?, completion: @escaping (Result<Data, CacheError>) -> Void)
+    func save(key: String?, data: Data)
 }

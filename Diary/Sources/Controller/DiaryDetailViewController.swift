@@ -123,10 +123,13 @@ extension DiaryDetailViewController {
         }
     }
     
-    private func handlingNetworkResult(result: Result<WeatherInfoDTO, NetworkError>) {
+    private func handlingNetworkResult(result: Result<Data, NetworkError>) {
         switch result {
         case .success(let weather):
-            self.currentWeather = weather
+            guard let decodedWeather = try? JSONDecoder().decode(WeatherInfoDTO.self, from: weather) else {
+                return
+            }
+            self.currentWeather = decodedWeather
         case .failure:
             DispatchQueue.main.async {
                 let alert = UIAlertController(
@@ -217,11 +220,8 @@ extension DiaryDetailViewController: CLLocationManagerDelegate {
         let networkManger = NetworkManager()
         let endPoint = SearchWeatherAPI(location: location.toDomain())
         
-        networkManger.requestData(
-            endPoint: endPoint,
-            type: WeatherInfoDTO.self
-        ) {
-            self.handlingNetworkResult(result: $0)
+        networkManger.requestData(endPoint: endPoint) { result in
+            self.handlingNetworkResult(result: result)
         }
     }
     
