@@ -18,7 +18,10 @@ final class DefaultWeatherImageRepository {
 }
 
 extension DefaultWeatherImageRepository: WeatherImageRepository {
-    func fetchWeahterImage(icon: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func fetchWeahterImage(
+        icon: String,
+        completion: @escaping (Result<Data, NetworkError>) -> Void)
+    {
         
         cache.fetchWeatherImage(key: icon) { result in
             if case .success(let data) = result {

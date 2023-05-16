@@ -40,6 +40,10 @@
 		0C8D743A2A0CCFB00097A47B /* WeahterImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74392A0CCFB00097A47B /* WeahterImageStorage.swift */; };
 		0C8D743C2A0CD06E0097A47B /* CacheWeatherImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D743B2A0CD06E0097A47B /* CacheWeatherImageStorage.swift */; };
 		0C8D743F2A0CD7A40097A47B /* CacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D743E2A0CD7A40097A47B /* CacheError.swift */; };
+		0C8D74442A1369320097A47B /* FetchDiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74432A1369320097A47B /* FetchDiaryUseCase.swift */; };
+		0C8D74462A1369400097A47B /* CreateDiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74452A1369400097A47B /* CreateDiaryUseCase.swift */; };
+		0C8D74482A13694D0097A47B /* UpdateDiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74472A13694D0097A47B /* UpdateDiaryUseCase.swift */; };
+		0C8D744A2A13695D0097A47B /* DeleteDiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D74492A13695D0097A47B /* DeleteDiaryUseCase.swift */; };
 		0CCBFD492950645B0070FE99 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CCBFD482950645B0070FE99 /* .swiftlint.yml */; };
 		0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */; };
 		0CCBFD4F295181A10070FE99 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBFD4E295181A10070FE99 /* Diary.swift */; };
@@ -114,6 +118,10 @@
 		0C8D74392A0CCFB00097A47B /* WeahterImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeahterImageStorage.swift; sourceTree = "<group>"; };
 		0C8D743B2A0CD06E0097A47B /* CacheWeatherImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWeatherImageStorage.swift; sourceTree = "<group>"; };
 		0C8D743E2A0CD7A40097A47B /* CacheError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheError.swift; sourceTree = "<group>"; };
+		0C8D74432A1369320097A47B /* FetchDiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDiaryUseCase.swift; sourceTree = "<group>"; };
+		0C8D74452A1369400097A47B /* CreateDiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryUseCase.swift; sourceTree = "<group>"; };
+		0C8D74472A13694D0097A47B /* UpdateDiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDiaryUseCase.swift; sourceTree = "<group>"; };
+		0C8D74492A13695D0097A47B /* DeleteDiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDiaryUseCase.swift; sourceTree = "<group>"; };
 		0CCBFD482950645B0070FE99 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0CCBFD4C295155860070FE99 /* DiaryContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContentConfiguration.swift; sourceTree = "<group>"; };
 		0CCBFD4E295181A10070FE99 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
@@ -190,6 +198,7 @@
 		0C0D029329CDA2F50009BD75 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				0C8D74422A124C6A0097A47B /* UseCase */,
 				0C1C92F529CDB18600739651 /* Entities */,
 				0C0D029629CDA5400009BD75 /* Interface */,
 			);
@@ -326,6 +335,17 @@
 				0C1D52E32966F45100C97E35 /* NetworkError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		0C8D74422A124C6A0097A47B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				0C8D74432A1369320097A47B /* FetchDiaryUseCase.swift */,
+				0C8D74452A1369400097A47B /* CreateDiaryUseCase.swift */,
+				0C8D74472A13694D0097A47B /* UpdateDiaryUseCase.swift */,
+				0C8D74492A13695D0097A47B /* DeleteDiaryUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		18135D1E295C26B100C2269D /* Utility */ = {
@@ -656,10 +676,12 @@
 				0C8D743C2A0CD06E0097A47B /* CacheWeatherImageStorage.swift in Sources */,
 				0C8D74372A0CCC0A0097A47B /* DefaultWeahterImageRepository.swift in Sources */,
 				18D381362952E311002BB2F1 /* UIView+.swift in Sources */,
+				0C8D74462A1369400097A47B /* CreateDiaryUseCase.swift in Sources */,
 				0C8D743A2A0CCFB00097A47B /* WeahterImageStorage.swift in Sources */,
 				0C894A7A2A0397B100C0E73B /* DiaryStorage.swift in Sources */,
 				0C1C92F729CDB3B000739651 /* WeatherEntity+Mapping.swift in Sources */,
 				0C8D74292A0B7D560097A47B /* LocationRepository.swift in Sources */,
+				0C8D74482A13694D0097A47B /* UpdateDiaryUseCase.swift in Sources */,
 				18135D22295C36B000C2269D /* TimeInterval+.swift in Sources */,
 				18F2A5382951ABD4008D9CCD /* UINavigationItem+.swift in Sources */,
 				185A5F3A295196C000AF523D /* DiaryListCellContentView.swift in Sources */,
@@ -677,6 +699,7 @@
 				18135D20295C26BF00C2269D /* Constant.swift in Sources */,
 				0C1C92F929D2C8F100739651 /* WeatherInfo.swift in Sources */,
 				0C8D74312A0B81860097A47B /* LocationService.swift in Sources */,
+				0C8D74442A1369320097A47B /* FetchDiaryUseCase.swift in Sources */,
 				18135D1D295C222D00C2269D /* LocalizedConstant.swift in Sources */,
 				C739AE29284DF28600741E8F /* DiaryListViewController.swift in Sources */,
 				18BB1831295ACAE400F84C47 /* UIAlertController+.swift in Sources */,
@@ -691,6 +714,7 @@
 				185A5F382951610800AF523D /* DiaryListCell.swift in Sources */,
 				C739AE25284DF28600741E8F /* AppDelegate.swift in Sources */,
 				0C8D743F2A0CD7A40097A47B /* CacheError.swift in Sources */,
+				0C8D744A2A13695D0097A47B /* DeleteDiaryUseCase.swift in Sources */,
 				0C894A7D2A039B0D00C0E73B /* CoreDataDiaryStorage.swift in Sources */,
 				0C1D52E62966FE7E00C97E35 /* UITextField+.swift in Sources */,
 				C739AE27284DF28600741E8F /* SceneDelegate.swift in Sources */,
