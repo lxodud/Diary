@@ -13,5 +13,18 @@ protocol UpdateDiaryUseCase {
 }
 
 final class DefaultUpdateDiaryUseCase {
+    private let diaryRepository: DiaryRepository
     
+    init(diaryRepository: DiaryRepository) {
+        self.diaryRepository = diaryRepository
+    }
+}
+
+extension DefaultUpdateDiaryUseCase: UpdateDiaryUseCase {
+    func updateDiary(
+        with diary: Diary?,
+        completion: @escaping(Result<Void, CoreDataError>) -> Void
+    ) {
+        diaryRepository.updateDiary(with: diary, completion: completion)
+    }
 }

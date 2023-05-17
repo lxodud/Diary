@@ -13,3 +13,20 @@ protocol DeleteDiaryUseCase {
         completion: @escaping(Result<Void, CoreDataError>) -> Void
     )
 }
+
+final class DefaultDeleteDiaryUseCase {
+    private let diaryRepository: DiaryRepository
+    
+    init(diaryRepository: DiaryRepository) {
+        self.diaryRepository = diaryRepository
+    }
+}
+
+extension DefaultDeleteDiaryUseCase: DeleteDiaryUseCase {
+    func deleteDiary(
+        with id: UUID,
+        completion: @escaping(Result<Void, CoreDataError>) -> Void
+    ) {
+        diaryRepository.deleteDiary(with: id, completion: completion)
+    }
+}

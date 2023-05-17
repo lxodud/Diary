@@ -34,6 +34,7 @@ extension DefaultCreateDiaryUseCase: CreateDiaryUseCase {
         completion: @escaping (Result<Void, CoreDataError>) -> Void
     ) {
         let currentLocation = locationRepository.fetchCurrentLocation()
+        
         weatherInfoRepository.fetchWeatherInfo(location: currentLocation) { result in
             switch result {
             case .success(let weahterInfo):
