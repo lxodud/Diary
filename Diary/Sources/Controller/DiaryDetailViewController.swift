@@ -88,7 +88,7 @@ extension DiaryDetailViewController {
             title: titleTextField.filteredText,
             body: contentTextView.filteredText,
             timeInterval: Date().timeIntervalSince1970,
-            condition: currentWeather
+            condition: currentWeather?.toDomain()
         )
     }
     

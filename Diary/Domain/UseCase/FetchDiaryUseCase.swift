@@ -10,3 +10,20 @@ protocol FetchDiaryUseCase {
         completion: @escaping (Result<[Diary], CoreDataError>) -> Void
     )
 }
+
+final class DefaultFetchDiaryUseCase {
+    private let diaryRepository: DiaryRepository
+    
+    init(diaryRepository: DiaryRepository) {
+        self.diaryRepository = diaryRepository
+
+    }
+}
+
+extension DefaultFetchDiaryUseCase: FetchDiaryUseCase {
+    func fetchDiaryList(
+        completion: @escaping (Result<[Diary], CoreDataError>) -> Void
+    ) {
+        diaryRepository.fetchDiaryList(completion: completion)
+    }
+}

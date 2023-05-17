@@ -79,7 +79,7 @@ extension DiaryListViewController: UITableViewDelegate {
 // MARK: Swipe Action
 extension DiaryListViewController {
     private func configureDeleteButton(item: Diary) -> UIContextualAction {
-        let handler: UIContextualAction.Handler = { [weak self] _, _, handler in
+        let handler: UIContextualAction.Handler = { [weak self] _, view, handler in
             guard let self = self else { return }
             
             let alert = UIAlertController(
@@ -100,7 +100,7 @@ extension DiaryListViewController {
             self.present(alert, animated: true)
         }
         
-        let action = UIContextualAction(style: .destructive, title: nil, handler: handler)
+        let action = UIContextualAction(style: .destructive, title: "아아아아", handler: handler)
         action.backgroundColor = .systemRed
         action.image = Constant.Images.deleteImage
         

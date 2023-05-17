@@ -24,7 +24,7 @@ extension DiaryEntity {
             title: title,
             body: body,
             timeInterval: timeInterval,
-            condition: self.condition?.weather
+            condition: self.condition?.weather?.toDomain()
         )
     }
 }

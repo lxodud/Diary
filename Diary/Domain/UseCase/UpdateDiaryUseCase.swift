@@ -11,3 +11,7 @@ protocol UpdateDiaryUseCase {
         completion: @escaping(Result<Void, CoreDataError>) -> Void
     )
 }
+
+final class DefaultUpdateDiaryUseCase {
+    
+}
