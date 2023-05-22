@@ -14,17 +14,15 @@ protocol CreateDiaryUseCase {
 
 final class DefaultCreateDiaryUseCase {
     private let diaryRepository: DiaryRepository
-    private let weatherInfoRepository: WeatherInfoRepository
-    private let locationRepository: LocationRepository
+    private let fetchWeatherInfoUseCase: FetchWeatherInfoUseCase
+
     
     init(
         diaryRepository: DiaryRepository,
-        weatherInfoRepository: WeatherInfoRepository,
-        locationRepository: LocationRepository
+        fetchWeatherInfoUseCase: FetchWeatherInfoUseCase
     ) {
         self.diaryRepository = diaryRepository
-        self.weatherInfoRepository = weatherInfoRepository
-        self.locationRepository = locationRepository
+        self.fetchWeatherInfoUseCase = fetchWeatherInfoUseCase
     }
 }
 
@@ -33,9 +31,9 @@ extension DefaultCreateDiaryUseCase: CreateDiaryUseCase {
         with diary: Diary?,
         completion: @escaping (Result<Void, CoreDataError>) -> Void
     ) {
-        let currentLocation = locationRepository.fetchCurrentLocation()
         
-        weatherInfoRepository.fetchWeatherInfo(location: currentLocation) { result in
+        
+        fetchWeatherInfoUseCase.fetchWeatherInfo { result in
             switch result {
             case .success(let weahterInfo):
                 var savedDiary = diary

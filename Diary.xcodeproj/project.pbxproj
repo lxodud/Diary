@@ -24,6 +24,8 @@
 		0C1D52E82966FE9F00C97E35 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1D52E72966FE9F00C97E35 /* UITextView+.swift */; };
 		0C396FD8295AB6CF00934C79 /* UIAlertAction+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */; };
 		0C396FDA295ACE5700934C79 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C396FD9295ACE5700934C79 /* CoreDataManager.swift */; };
+		0C5B380E2A1B4D76007DB777 /* FetchWeatherInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B380D2A1B4D76007DB777 /* FetchWeatherInfoUseCase.swift */; };
+		0C5B38102A1B4D82007DB777 /* FetchWeatherImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B380F2A1B4D82007DB777 /* FetchWeatherImageUseCase.swift */; };
 		0C894A782A0393F600C0E73B /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A772A0393F600C0E73B /* CoreDataStorage.swift */; };
 		0C894A7A2A0397B100C0E73B /* DiaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A792A0397B100C0E73B /* DiaryStorage.swift */; };
 		0C894A7D2A039B0D00C0E73B /* CoreDataDiaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */; };
@@ -102,6 +104,8 @@
 		0C1D52E72966FE9F00C97E35 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		0C396FD7295AB6CF00934C79 /* UIAlertAction+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+.swift"; sourceTree = "<group>"; };
 		0C396FD9295ACE5700934C79 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0C5B380D2A1B4D76007DB777 /* FetchWeatherInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeatherInfoUseCase.swift; sourceTree = "<group>"; };
+		0C5B380F2A1B4D82007DB777 /* FetchWeatherImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeatherImageUseCase.swift; sourceTree = "<group>"; };
 		0C894A772A0393F600C0E73B /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		0C894A792A0397B100C0E73B /* DiaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryStorage.swift; sourceTree = "<group>"; };
 		0C894A7C2A039B0D00C0E73B /* CoreDataDiaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDiaryStorage.swift; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 				0C8D74452A1369400097A47B /* CreateDiaryUseCase.swift */,
 				0C8D74472A13694D0097A47B /* UpdateDiaryUseCase.swift */,
 				0C8D74492A13695D0097A47B /* DeleteDiaryUseCase.swift */,
+				0C5B380D2A1B4D76007DB777 /* FetchWeatherInfoUseCase.swift */,
+				0C5B380F2A1B4D82007DB777 /* FetchWeatherImageUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				0C0D028E29CC641A0009BD75 /* DiaryManageViewController.swift in Sources */,
 				0C8D74272A0B7B7D0097A47B /* DefaultWeahterInfoRepository.swift in Sources */,
 				0C0D029529CDA37C0009BD75 /* DiaryRepository.swift in Sources */,
+				0C5B380E2A1B4D76007DB777 /* FetchWeatherInfoUseCase.swift in Sources */,
 				0C0F6303296405F2004EEAA5 /* WeatherDTO+Mapping.swift in Sources */,
 				0C1D52E229664E1300C97E35 /* ImageLoader.swift in Sources */,
 				0C894A7F2A039D9E00C0E73B /* CoreDataError.swift in Sources */,
@@ -721,6 +728,7 @@
 				18ACF3D62951A4F6006906D5 /* DiaryDetailViewController.swift in Sources */,
 				C739AE2F284DF28600741E8F /* Diary.xcdatamodeld in Sources */,
 				0CCBFD4D295155860070FE99 /* DiaryContentConfiguration.swift in Sources */,
+				0C5B38102A1B4D82007DB777 /* FetchWeatherImageUseCase.swift in Sources */,
 				0C8D74332A0B85170097A47B /* DefaultLocationRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
