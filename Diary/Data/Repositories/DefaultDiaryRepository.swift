@@ -16,19 +16,19 @@ final class DefaultDiaryRepository {
 }
 
 extension DefaultDiaryRepository: DiaryRepository {
-    func createDiary(with diary: Diary?, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+    func createDiary(with diary: Diary?, completion: @escaping (Result<Void, Error>) -> Void) {
         diaryStorage.create(with: diary, completion: completion)
     }
     
-    func fetchDiaryList(completion: @escaping (Result<[Diary], CoreDataError>) -> Void) {
+    func fetchDiaryList(completion: @escaping (Result<[Diary], Error>) -> Void) {
         diaryStorage.fetch(completion: completion)
     }
     
-    func updateDiary(with diary: Diary?, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+    func updateDiary(with diary: Diary?, completion: @escaping (Result<Void, Error>) -> Void) {
         diaryStorage.update(with: diary, completion: completion)
     }
     
-    func deleteDiary(with id: UUID, completion: @escaping (Result<Void, CoreDataError>) -> Void) {
+    func deleteDiary(with id: UUID, completion: @escaping (Result<Void, Error>) -> Void) {
         diaryStorage.delete(with: id, completion: completion)
     }
 }

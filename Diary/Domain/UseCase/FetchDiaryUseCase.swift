@@ -7,7 +7,7 @@
 
 protocol FetchDiaryUseCase {
     func fetchDiaryList(
-        completion: @escaping (Result<[Diary], CoreDataError>) -> Void
+        completion: @escaping (Result<[Diary], Error>) -> Void
     )
 }
 
@@ -22,7 +22,7 @@ final class DefaultFetchDiaryUseCase {
 
 extension DefaultFetchDiaryUseCase: FetchDiaryUseCase {
     func fetchDiaryList(
-        completion: @escaping (Result<[Diary], CoreDataError>) -> Void
+        completion: @escaping (Result<[Diary], Error>) -> Void
     ) {
         diaryRepository.fetchDiaryList(completion: completion)
     }

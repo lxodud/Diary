@@ -8,7 +8,7 @@
 protocol UpdateDiaryUseCase {
     func updateDiary(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
 }
 
@@ -23,7 +23,7 @@ final class DefaultUpdateDiaryUseCase {
 extension DefaultUpdateDiaryUseCase: UpdateDiaryUseCase {
     func updateDiary(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     ) {
         diaryRepository.updateDiary(with: diary, completion: completion)
     }

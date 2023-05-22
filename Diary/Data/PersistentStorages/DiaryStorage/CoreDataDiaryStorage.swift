@@ -19,13 +19,13 @@ final class CoreDataDiaryStorage {
 extension CoreDataDiaryStorage: DiaryStorage {
     func create(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             guard let diary = diary,
                   let weather = diary.condition
             else {
-                completion(.failure(.createError))
+                completion(.failure(CoreDataError.createError))
                 return
             }
             
@@ -46,14 +46,14 @@ extension CoreDataDiaryStorage: DiaryStorage {
         }
     }
     
-    func fetch(completion: @escaping (Result<[Diary], CoreDataError>) -> Void) {
+    func fetch(completion: @escaping (Result<[Diary], Error>) -> Void) {
         coreDataStorage.performBackgroundTask { context in
             let fetchRequest = DiaryEntity.fetchRequest()
             let dateSort = NSSortDescriptor(key: "createdIntervalValue", ascending: false)
             fetchRequest.sortDescriptors = [dateSort]
             
             guard let entities = try? context.fetch(fetchRequest) else {
-                completion(.failure(.fetchError))
+                completion(.failure(CoreDataError.fetchError))
                 return
             }
             
@@ -63,11 +63,11 @@ extension CoreDataDiaryStorage: DiaryStorage {
     
     func update(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             guard let diary = diary else {
-                completion(.failure(.updateError))
+                completion(.failure(CoreDataError.updateError))
                 return
             }
             
@@ -77,7 +77,7 @@ extension CoreDataDiaryStorage: DiaryStorage {
             guard let updateObjects = try? context.fetch(fetchRequest),
                   let object = updateObjects.first
             else {
-                completion(.failure(.updateError))
+                completion(.failure(CoreDataError.updateError))
                 return
             }
             
@@ -92,14 +92,14 @@ extension CoreDataDiaryStorage: DiaryStorage {
     
     func delete(
         with id: UUID,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             let fetchRequest = DiaryEntity.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id = %@", id.uuidString)
             
             guard let objects = try? context.fetch(fetchRequest) else {
-                completion(.failure(.deleteError))
+                completion(.failure(CoreDataError.deleteError))
                 return
             }
             

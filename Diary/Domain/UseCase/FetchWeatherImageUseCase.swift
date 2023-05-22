@@ -10,7 +10,7 @@ import Foundation
 protocol FetchWeahterImageUseCase {
     func fetchWeatherImage(
         icon: String,
-        completion: @escaping (Result<Data, NetworkError>) -> Void
+        completion: @escaping (Result<Data, Error>) -> Void
     )
 }
 
@@ -25,7 +25,7 @@ final class DefaultFetchWeatherImageUseCase {
 extension DefaultFetchWeatherImageUseCase: FetchWeahterImageUseCase {
     func fetchWeatherImage(
         icon: String,
-        completion: @escaping (Result<Data, NetworkError>) -> Void
+        completion: @escaping (Result<Data, Error>) -> Void
     ) {
         weatherImageRepository.fetchWeahterImage(icon: icon, completion: completion)
     }

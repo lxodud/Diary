@@ -10,20 +10,20 @@ import Foundation
 protocol DiaryRepository {
     func createDiary(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
     
     func fetchDiaryList(
-        completion: @escaping (Result<[Diary], CoreDataError>) -> Void
+        completion: @escaping (Result<[Diary], Error>) -> Void
     )
     
     func updateDiary(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
     
     func deleteDiary(
         with id: UUID,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
 }

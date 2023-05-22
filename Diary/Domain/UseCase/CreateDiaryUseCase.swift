@@ -8,7 +8,7 @@
 protocol CreateDiaryUseCase {
     func createDiary(
         with diary: Diary?,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
 }
 
@@ -29,7 +29,7 @@ final class DefaultCreateDiaryUseCase {
 extension DefaultCreateDiaryUseCase: CreateDiaryUseCase {
     func createDiary(
         with diary: Diary?,
-        completion: @escaping (Result<Void, CoreDataError>) -> Void
+        completion: @escaping (Result<Void, Error>) -> Void
     ) {
         
         
@@ -43,7 +43,7 @@ extension DefaultCreateDiaryUseCase: CreateDiaryUseCase {
                     completion: completion
                 )
             case .failure(let error):
-                completion(.failure(.fetchError))
+                completion(.failure(error))
             }
         }
         

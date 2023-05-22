@@ -6,7 +6,7 @@
 //
 
 protocol FetchWeatherInfoUseCase {
-    func fetchWeatherInfo(completion: @escaping (Result<WeatherInfo, NetworkError>) -> Void)
+    func fetchWeatherInfo(completion: @escaping (Result<WeatherInfo, Error>) -> Void)
 }
 
 final class DefaultFetchWeatherInfoUseCase {
@@ -23,7 +23,7 @@ final class DefaultFetchWeatherInfoUseCase {
 }
 
 extension DefaultFetchWeatherInfoUseCase: FetchWeatherInfoUseCase {
-    func fetchWeatherInfo(completion: @escaping (Result<WeatherInfo, NetworkError>) -> Void) {
+    func fetchWeatherInfo(completion: @escaping (Result<WeatherInfo, Error>) -> Void) {
         let currentLocation = locationRepository.fetchCurrentLocation()
         
         weatherInfoRepository.fetchWeatherInfo(location: currentLocation, completion: completion)

@@ -10,7 +10,7 @@ import Foundation
 protocol DeleteDiaryUseCase {
     func deleteDiary(
         with id: UUID,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     )
 }
 
@@ -25,7 +25,7 @@ final class DefaultDeleteDiaryUseCase {
 extension DefaultDeleteDiaryUseCase: DeleteDiaryUseCase {
     func deleteDiary(
         with id: UUID,
-        completion: @escaping(Result<Void, CoreDataError>) -> Void
+        completion: @escaping(Result<Void, Error>) -> Void
     ) {
         diaryRepository.deleteDiary(with: id, completion: completion)
     }

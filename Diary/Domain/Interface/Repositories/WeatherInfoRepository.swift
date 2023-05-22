@@ -10,6 +10,6 @@ import Foundation
 protocol WeatherInfoRepository {
     func fetchWeatherInfo(
         location: Location,
-        completion: @escaping (Result<WeatherInfo, NetworkError>) -> Void
+        completion: @escaping (Result<WeatherInfo, Error>) -> Void
     )
 }

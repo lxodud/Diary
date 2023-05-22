@@ -19,7 +19,7 @@ final class DefaultWeahterInfoRepository {
 extension DefaultWeahterInfoRepository: WeatherInfoRepository {
     func fetchWeatherInfo(
         location: Location,
-        completion: @escaping (Result<WeatherInfo, NetworkError>) -> Void
+        completion: @escaping (Result<WeatherInfo, Error>) -> Void
     ) {
         let endPoint = SearchWeatherAPI(location: location)
             
@@ -28,7 +28,7 @@ extension DefaultWeahterInfoRepository: WeatherInfoRepository {
                 switch result {
                 case .success(let data):
                     guard let decodedData = try? self.decoder.decode(WeatherInfoDTO.self, from: data) else {
-                        completion(.failure(.parsingError))
+                        completion(.failure(NetworkError.parsingError))
                         return
                     }
                     

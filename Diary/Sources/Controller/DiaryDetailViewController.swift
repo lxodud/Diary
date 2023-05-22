@@ -123,7 +123,7 @@ extension DiaryDetailViewController {
         }
     }
     
-    private func handlingNetworkResult(result: Result<Data, NetworkError>) {
+    private func handlingNetworkResult(result: Result<Data, Error>) {
         switch result {
         case .success(let weather):
             guard let decodedWeather = try? JSONDecoder().decode(WeatherInfoDTO.self, from: weather) else {
