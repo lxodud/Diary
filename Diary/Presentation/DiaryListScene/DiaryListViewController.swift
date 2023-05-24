@@ -12,6 +12,16 @@ final class DiaryListViewController: UIViewController {
     
     private let tableView: UITableView = UITableView(frame: .zero, style: .plain)
     private var dataSource: UITableViewDiffableDataSource<Int, Diary>?
+    private let viewModel: DiaryListViewModel
+    
+    init(viewModel: DiaryListViewModel = DiaryListViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +29,18 @@ final class DiaryListViewController: UIViewController {
         setNavigationBar()
         setTableViewAnchor()
         setUpTableViewDataSource()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        diaries = coreDataManager.fetchDiary()
-        setSnapshot()
+        viewModel.action(.fetchDiaries)
+    }
+    
+    private func bind() {
+        viewModel.diaries.subscribe(on: self) { diaries in
+            self.setSnapshot(with: diaries)
+        }
     }
 }
 
@@ -142,9 +157,7 @@ extension DiaryListViewController {
         return true
     }
     
-    private func setSnapshot() {
-        guard let diaries = diaries else { return }
-        
+    private func setSnapshot(with diaries: [Diary]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Diary>()
         snapshot.appendSections([.zero])
         snapshot.appendItems(diaries)

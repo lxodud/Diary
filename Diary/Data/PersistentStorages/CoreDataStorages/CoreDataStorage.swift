@@ -11,19 +11,19 @@ import CoreData
 final class CoreDataStorage {
     static let shared = CoreDataStorage()
     
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "CireDataStorage")
-        container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        }
-        
-        return container
-    }()
+//    private lazy var persistentContainer: NSPersistentContainer = {
+//        let container = NSPersistentContainer(name: "Diary")
+//        container.loadPersistentStores { _, error in
+//            if let error = error as NSError? {
+//                fatalError("Unresolved error \(error), \(error.userInfo)")
+//            }
+//        }
+//
+//        return container
+//    }()
     
     func save() {
-        let context = persistentContainer.viewContext
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         
         if context.hasChanges {
             try? context.save()
@@ -31,6 +31,6 @@ final class CoreDataStorage {
     }
     
     func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
-        persistentContainer.performBackgroundTask(block)
+        CoreDataManager.shared.persistentContainer.performBackgroundTask(block)
     }
 }

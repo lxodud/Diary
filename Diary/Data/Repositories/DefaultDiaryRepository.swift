@@ -10,7 +10,7 @@ import Foundation
 final class DefaultDiaryRepository {
     private let diaryStorage: DiaryStorage
     
-    init(diaryStorage: DiaryStorage) {
+    init(diaryStorage: DiaryStorage = CoreDataDiaryStorage()) {
         self.diaryStorage = diaryStorage
     }
 }

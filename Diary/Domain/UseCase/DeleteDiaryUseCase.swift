@@ -17,7 +17,7 @@ protocol DeleteDiaryUseCase {
 final class DefaultDeleteDiaryUseCase {
     private let diaryRepository: DiaryRepository
     
-    init(diaryRepository: DiaryRepository) {
+    init(diaryRepository: DiaryRepository = DefaultDiaryRepository()) {
         self.diaryRepository = diaryRepository
     }
 }
