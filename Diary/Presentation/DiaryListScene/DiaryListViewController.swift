@@ -39,7 +39,9 @@ final class DiaryListViewController: UIViewController {
     
     private func bind() {
         viewModel.diaries.subscribe(on: self) { diaries in
-            self.setSnapshot(with: diaries)
+            DispatchQueue.main.async {
+                self.setSnapshot(with: diaries)
+            }
         }
     }
 }

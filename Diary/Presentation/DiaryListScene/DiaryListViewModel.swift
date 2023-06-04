@@ -34,7 +34,7 @@ final class DiaryListViewModel: DiaryListViewModelOutput {
     
     init(
         fetchDiaryUseCase: FetchDiaryUseCase = DefaultFetchDiaryUseCase(),
-         deleteDiaryUseCase: DeleteDiaryUseCase = DefaultDeleteDiaryUseCase()
+        deleteDiaryUseCase: DeleteDiaryUseCase = DefaultDeleteDiaryUseCase()
     ) {
         self.fetchDiaryUseCase = fetchDiaryUseCase
         self.deleteDiaryUseCase = deleteDiaryUseCase
