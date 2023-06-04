@@ -14,8 +14,8 @@ final class DefaultFetchWeatherInfoUseCase {
     private let locationRepository: LocationRepository
     
     init(
-        weatherInfoRepository: WeatherInfoRepository,
-        locationRepository: LocationRepository
+        weatherInfoRepository: WeatherInfoRepository = DefaultWeahterInfoRepository(),
+        locationRepository: LocationRepository = DefaultLocationRepository()
     ) {
         self.weatherInfoRepository = weatherInfoRepository
         self.locationRepository = locationRepository

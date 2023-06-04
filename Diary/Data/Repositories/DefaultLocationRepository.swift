@@ -8,7 +8,7 @@
 final class DefaultLocationRepository {
     private let locationService: LocationService
     
-    init(locationService: LocationService) {
+    init(locationService: LocationService = CLLocationService()) {
         self.locationService = locationService
     }
 }

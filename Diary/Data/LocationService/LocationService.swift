@@ -15,6 +15,11 @@ protocol LocationService {
 final class CLLocationService: NSObject {
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
 }
 
 extension CLLocationService: CLLocationManagerDelegate {
@@ -43,6 +48,13 @@ extension CLLocationService: CLLocationManagerDelegate {
         }
         
         currentLocation = location
+    }
+    
+    func locationManager(
+        _ manager: CLLocationManager,
+        didFailWithError error: Error
+    ) {
+        debugPrint(error)
     }
 }
 

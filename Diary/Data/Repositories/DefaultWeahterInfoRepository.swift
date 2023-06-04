@@ -11,7 +11,7 @@ final class DefaultWeahterInfoRepository {
     private let networkService: APINetworkService
     private let decoder = JSONDecoder()
     
-    init(networkService: APINetworkService) {
+    init(networkService: APINetworkService = NetworkManager()) {
         self.networkService = networkService
     }
 }

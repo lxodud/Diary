@@ -11,7 +11,10 @@ final class DefaultWeatherImageRepository {
     private let cache: WeatherImageStorage
     private let networkService: APINetworkService
     
-    init(cache: WeatherImageStorage, networkService: APINetworkService) {
+    init(
+        cache: WeatherImageStorage = CacheWeatherImageStorage(),
+        networkService: APINetworkService = NetworkManager()
+    ) {
         self.cache = cache
         self.networkService = networkService
     }

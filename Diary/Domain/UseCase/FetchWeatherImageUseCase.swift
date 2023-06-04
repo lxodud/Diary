@@ -17,7 +17,7 @@ protocol FetchWeahterImageUseCase {
 final class DefaultFetchWeatherImageUseCase {
     private let weatherImageRepository: WeatherImageRepository
     
-    init(weatherImageRepository: WeatherImageRepository) {
+    init(weatherImageRepository: WeatherImageRepository = DefaultWeatherImageRepository()) {
         self.weatherImageRepository = weatherImageRepository
     }
 }
